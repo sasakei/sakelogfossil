@@ -5,6 +5,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -17,7 +19,7 @@
     <nav class="navbar navbar-default navbar-fixed-top navbar-transparent">
      <div class="container">
        <%= link_to root_path do %>
-         <span><%= image_tag "icons/logo.png", class: "navbar-brand" %></span>
+         <h1 class = "navbar-brand"> 生年月日 </h1>
        <% end %>
        <ul class="nav navbar-nav navbar-right">
          <% if logged_in? %>

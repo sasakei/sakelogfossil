@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'sessions/new'
+  #get 'sessions/new'
 
   # http://localhost:3000 にアクセスするとpages#indexアクションにリクエストが振り分けられる
   root 'pages#index'
