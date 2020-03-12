@@ -1,10 +1,12 @@
 <!DOCTYPE html>
+<!-- ヘッダー等共通レイアウト -->
 <html>
   <head>
     <title>Pictgram</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <!-- fontawesomeのリンク -->
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -12,41 +14,59 @@
   </head>
 
   <body>
+    <%# フラッシュの呼び出し %>
     <% flash.each do |key, value| %>
       <div class="alert alert-<%= key %>" role="alert"><%= value %></div>
     <% end %>
 
+    <!-- ヘッダーアイコン -->
     <nav class="navbar navbar-default navbar-fixed-top navbar-transparent">
+      <!-- アプリロゴ -->
      <div class="container">
        <%= link_to root_path do %>
-         <h1 class = "navbar-brand"> 生年月日 </h1>
+         <h1 class = "navbar-brand"> awegraph </h1>
        <% end %>
+
        <ul class="nav navbar-nav navbar-right">
+
+         <%# ログインしている場合のヘッダーアイコン %>
          <% if logged_in? %>
+
+            <%# お気に入り %>
            <li>
              <%= link_to favorites_index_path do %>
-               <%= image_tag "icons/heart.png" %>
+               <i class="fas fa-heart fa-3x fa-fw"></i>
              <% end %>
            </li>
+
+           <!-- 新規投稿 -->
            <li>
              <%= link_to new_topic_path do %>
-               <%= image_tag 'icons/camera.png' %>
+               <i class="far fa-edit fa-3x"></i>
              <% end %>
            </li>
+
+           <!-- ログアウト -->
            <li>
              <%= link_to logout_path, method: :delete do %>
-               <%= image_tag "icons/logout.png" %>
+               <i class="fas fa-sign-out-alt fa-3x"></i>
              <% end %>
            </li>
+
+           <%# ログインしていない場合 %>
          <% else %>
+
+          <%# サインイン %>
            <li>
              <%= link_to new_user_path do %>
-               <%= image_tag "icons/register.png" %>
+               サインイン
              <% end %>
            </li>
+
+           <!-- ログイン -->
            <li>
              <%= link_to login_path do %>
-               <%= image_tag "icons/login.png" %>
+               ログイン
              <% end %>
            </li>
          <% end %>
@@ -56,6 +76,7 @@
 
     <%= yield %>
 
+    <!-- アラートの消えるスピード -->
     <script>
       $(function(){
         $(".alert").fadeOut(5000);
