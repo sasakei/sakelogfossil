@@ -24,7 +24,7 @@
       <!-- アプリロゴ -->
      <div class="container">
        <%= link_to root_path do %>
-         <h1 class = "navbar-brand"> awegraph </h1>
+         <h1 class = "navbar-brand"> AWEGRA </h1>
        <% end %>
 
        <ul class="nav navbar-nav navbar-right">
@@ -57,17 +57,13 @@
          <% else %>
 
           <%# サインイン %>
-           <li>
-             <%= link_to new_user_path do %>
-               サインイン
-             <% end %>
+           <li class="not_log_in">
+             <%= link_to 'サインイン',new_user_path %>
            </li>
 
            <!-- ログイン -->
-           <li>
-             <%= link_to login_path do %>
-               ログイン
-             <% end %>
+           <li class="not_log_in">
+             <%= link_to 'ログイン', login_path %>
            </li>
          <% end %>
        </ul>

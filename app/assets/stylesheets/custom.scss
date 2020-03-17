@@ -90,6 +90,16 @@ h1, h2 {
     color: white;
   }
 
+  .not_log_in{
+    border:1px white solid;
+    padding:0px ;
+    margin: 8px 10px 0 10px;
+  }
+
+  .not_log_in:hover{
+    background-color: white;
+  }
+
   img {
     height: 40px;
   }

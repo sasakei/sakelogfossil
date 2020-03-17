@@ -14,20 +14,21 @@
             <%# 投稿画像 %>
             <%= image_tag topic.image.url %>
 
-            <%# ログインユーザーのfavに含まれていれば %>
+            <%#ログインユーザーのfavに含まれていれば  %>
             <ul>
             <li>
             <% if !topic.favorite_users.include?(current_user) %>
-            <%# ハートアイコンをfavorite#createへのリンクに %>
+              <%# ハートアイコンをfavorite#createへのリンクに %>
               <%= link_to favorites_path(topic_id: topic.id),:style=>"color:red;", method: :post do %>
                 <i class="far fa-heart fa-2x fa-fw　add"></i>
               <% end %>
 
               <%# favに含まれていたら %>
-              <% else %>
+            <% else %>
               <%# ハートアイコンをfavorite#destroyへのリンクに %>
-              <%# <%= link_to /favorites/destroy(topic_id: topic.id),:style=>"color:red;", method: :delete %> %>
+              <%= link_to favorites_path(topic_id: topic.id),:style=>"color:red;", method: :delete do %>
               <i class="fas fa-heart fa-2x fa-fw added"></i>
+              <% end %>
             <% end %>
             </li>
             <!-- コメントアイコン -->
