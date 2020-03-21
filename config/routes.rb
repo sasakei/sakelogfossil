@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # pages/helpというurlとpages#helpというアクションが紐付きました
   get 'pages/help'
   #userのcreateアクションに対応するroutes
-
+  
 
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
