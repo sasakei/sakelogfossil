@@ -2,7 +2,7 @@
 <!-- ヘッダー等共通レイアウト -->
 <html>
   <head>
-    <title>Pictgram</title>
+    <title>SakeLog</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -24,7 +24,7 @@
       <!-- アプリロゴ -->
      <div class="container">
        <%= link_to root_path do %>
-         <h1 class = "navbar-brand"> AWEGRA </h1>
+         <h1 class = "navbar-brand"> サケログ </h1>
        <% end %>
 
        <ul class="nav navbar-nav navbar-right">
@@ -47,7 +47,7 @@
            <!-- 新規投稿 -->
            <li>
              <%= link_to new_topic_path do %>
-               <i class="far fa-edit fa-3x"></i>
+               <i class="fas fa-wine-bottle fa-3x"></i>
              <% end %>
            </li>
 
