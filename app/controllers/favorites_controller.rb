@@ -16,9 +16,7 @@ def create
 end
 
 def destroy
-  favorite = Favorite.new
-  favorite.user_id = current_user.id
-  favorite.topic_id = params[:topic_id]
+  favorite = Favorite.find_by(user_id: current_user.id, topic_id: params[:topic_id])
 
   if favorite.destroy
     redirect_to topics_path, success: 'お気に入りから削除しました'

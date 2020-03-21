@@ -31,7 +31,12 @@
 
          <%# ログインしている場合のヘッダーアイコン %>
          <% if logged_in? %>
-
+            <%# 投稿一覧 %>
+            <li>
+           <%= link_to topics_path do %>
+             <i class="fas fa-home fa-3x fa-fw"></i>
+           <% end %>
+            </li>
             <%# お気に入り %>
            <li>
              <%= link_to favorites_index_path do %>
@@ -58,12 +63,12 @@
 
           <%# サインイン %>
            <li class="not_log_in">
-             <%= link_to 'サインイン',new_user_path %>
+             <%= link_to "サインイン",new_user_path %>
            </li>
 
            <!-- ログイン -->
            <li class="not_log_in">
-             <%= link_to 'ログイン', login_path %>
+             <%= link_to "ログイン", login_path %>
            </li>
          <% end %>
        </ul>
@@ -75,7 +80,7 @@
     <!-- アラートの消えるスピード -->
     <script>
       $(function(){
-        $(".alert").fadeOut(5000);
+        $(".alert").fadeOut(2000);
       });
     </script>
   </body>
