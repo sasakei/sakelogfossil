@@ -1,10 +1,15 @@
+
+
 ul{
   list-style: none;
 }
 
 h1, h2 {
   font-weight: 100;
+  font-family: 'Oswald', sans-serif;
 }
+
+// ーーーTOPーーー
 
 .text-white {
   color: #fff;
@@ -47,9 +52,13 @@ h1, h2 {
   }
 }
 
+// ーーーForm Areaーーー
+
 .form-control {
   height: 45px;
 }
+
+// ーーーSign Up Pageーーー
 
 .users-new-wrapper {
   width: 100vw;
@@ -77,6 +86,8 @@ h1, h2 {
   z-index: 10000;
 }
 
+// ーーーHeaderーーー
+
 .navbar-transparent {
   margin-bottom: 0px;
   background-color: rgba(0,0,0,0.5);
@@ -102,6 +113,9 @@ h1, h2 {
   }
 }
 
+
+// ーーーButtonーーー
+
 .btn-black {
   color: #565656;
   border: 1px solid #565656;
@@ -115,19 +129,56 @@ h1, h2 {
   }
 }
 
+// ーーーNew Post Pageーーー
+
 .topic-new-wrapper {
   padding-top: 120px;
 }
 
+.evaluation{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+.evaluation input[type='radio']{
+  display: none;
+}
+.evaluation label{
+  position: relative;
+  padding: 10px 10px 0;
+  color: gray;
+  cursor: pointer;
+  font-size: 50px;
+}
+.evaluation label .text{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  text-align: center;
+  font-size: 12px;
+  color: gray;
+}
+.evaluation label:hover,
+.evaluation label:hover ~ label,
+.evaluation input[type='radio']:checked ~ label{
+  color: #ffcc00;
+}
+
+// ーーーTopic indexーーー
+
 .topic-index-wrapper {
   padding-top: 70px;
-  background-color: #fafafa;
+  background-color: #FFFFF0;
+
+// ーーーTopic Singleーーー
+
   .topic-index-single {
     background-color: #fff;
     padding-top: 20px;
     padding-bottom: 20px;
     margin-top: 30px;
-    border: 1px solid #e6ecf0;
+    border: 2px outset grey;
     border-radius: 3px;
     .topic-author {
       padding-right: 20px;

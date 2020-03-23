@@ -12,6 +12,11 @@
             <%= f.file_field :image%>
           </div>
 
+          <div class="field" id="star">
+              <%= f.label :star %>
+              <%= f.hidden_field :star, id: :review_star %>
+          </div>
+
           <!-- 投稿文フォーム -->
           <div class="form-group">
             <%= f.label :description %>
@@ -22,6 +27,15 @@
           <%= f.submit '投稿', class: 'btn btn-black btn-block' %>
 
         <% end %>
+        <script>
+          $('#star').raty({
+            size     : 36,
+            starOff:  '<%= asset_path('star-off.png') %>',
+            starOn : '<%= asset_path('star-on.png') %>',
+            scoreName: 'review[star]'
+          });
+        </script>
+        
       </div>
     </div>
   </div>
