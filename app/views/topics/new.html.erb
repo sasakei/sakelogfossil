@@ -1,4 +1,6 @@
 <!-- 新規投稿 -->
+
+
 <div class="topic-new-wrapper" >
   <div class="container">
     <div class="row">
@@ -8,34 +10,37 @@
 
           <%# 画像投稿フォーム %>
           <div class="form-group">
-            <%= f.label :image %>
+            <%= f.label :image , class:'col-md-3 col-form-label' %>
             <%= f.file_field :image%>
           </div>
 
-          <div class="field" id="star">
-              <%= f.label :star %>
+          <div class="form-group" id="star">
+              <%= f.label :star , class:'col-md-3 col-form-label' %>
               <%= f.hidden_field :star, id: :review_star %>
           </div>
 
+          <script>
+            $('#star').raty({
+              size     : 36,
+              starOff: "<%= asset_path('star-off.png') %>",
+              starOn : "<%= asset_path('star-on.png') %>",
+              scoreName: 'topic[star]'
+            });
+          </script>
+
           <!-- 投稿文フォーム -->
           <div class="form-group">
-            <%= f.label :description %>
-            <%= f.text_area :description, class: 'form-control' %>
+            <%= f.label :description , class:'col-md-3 col-form-label' %>
+            <%= f.text_area :description, class:'col-md-3 form-control' %>
           </div>
 
           <%# 投稿ボタン %>
           <%= f.submit '投稿', class: 'btn btn-black btn-block' %>
 
         <% end %>
-        <script>
-          $('#star').raty({
-            size     : 36,
-            starOff:  '<%= asset_path('star-off.png') %>',
-            starOn : '<%= asset_path('star-on.png') %>',
-            scoreName: 'review[star]'
-          });
-        </script>
-        
+
+
+
       </div>
     </div>
   </div>

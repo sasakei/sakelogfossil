@@ -18,6 +18,16 @@ class TopicsController < ApplicationController
     end
   end
 
+  def destroy
+    topic = Topic.find_by(id: params[:id])
+    if topic.destroy
+      redirect_to topics_path, success: '投稿を削除しました'
+    else
+      flash.now[:danger] = "投稿の削除に失敗しました"
+      redirect_back(fallback_location: root_path)
+    end
+  end
+
   def show
     @topic = Topic.find_by(id: params[:id])
   end
