@@ -23,10 +23,12 @@
               <% end %>
             </li>
 <!-- コメントアイコン -->
-            <li>
-              <i class="far fa-comments fa-2x fa-fw"></i>
-            </li>
-          </ul>
+             <% if current_user.id == @topic.user_id %>
+              <%= link_to topic_path(id: @topic.id),  method: :delete do %>
+              <i class="far fa-trash-alt fa-2x"></i>
+              <% end %>
+            <% end %>
+            </ul>
 <!-- ユーザー名 -->
           <p class="topic-author">
             <%= @topic.user.name %>
