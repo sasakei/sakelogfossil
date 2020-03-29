@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @topic = Topic.find_by(id: params[:id])
+    @user = User.find_by(id: params[:id])
   end
 
   private
