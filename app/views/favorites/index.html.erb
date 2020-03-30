@@ -1,12 +1,11 @@
 <div class="topic-index-wrapper">
   <div class="container">
+    <div class="row">
     <!-- お気に入りした投稿を表示 -->
-    <% @favorite_topics.each do |topic| %>
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-          <div class="topic-index-single">
+        <% @favorite_topics.each do |topic| %>
 
-          <div class="card" style="width: 20rem;">
+        <div class="col-md-3 col-md-offset-2">
+          <div class="topic-index-single">
             <%= link_to topic_path(id: topic.id) do %>
               <%# 投稿画像 %>
               <%= image_tag topic.image.url %>
@@ -47,8 +46,7 @@
               </p>
             </div>
           </div>
-        </div>
+          <% end %>
+          </div>
       </div>
-    <% end %>
   </div>
-</div>

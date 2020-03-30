@@ -29,7 +29,7 @@ class TopicsController < ApplicationController
   end
 
   def show
-    @topics = Topic.find_by(id: params[:id])
+    @topic = Topic.find_by(id: params[:id])
   end
 
   private
